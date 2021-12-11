@@ -33,7 +33,7 @@
         },
         data() {
             return {
-                showModal: false,
+                showModal: {visible: false},
                 messageDocs: [],
                 messageSelected: {},
                 showAction: true
@@ -48,10 +48,10 @@
         },
         methods: {
             openModal() {
-                this.showModal = true;
+                this.showModal.visible = true;
             },
             hideModal() {
-                this.showModal = false;
+                this.showModal.visible = false;
             },
             setMessage(index) {
                 for(let i = 0; i < this.messageDocs.length; i++) {

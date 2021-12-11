@@ -1,5 +1,5 @@
 <template>
-    <b-modal id="bv-modal-edit" v-model="showModal">
+    <b-modal id="bv-modal-edit" v-model="showModal.visible">
         <div slot="modal-header" class="m-modal-header">
             <div>
                 <h5 class="modal-title">Edit Alert</h5>
@@ -8,7 +8,7 @@
             <button type="button" aria-label="Close" class="close" @click="hideModal">×</button>
         </div>
         <b-overlay :show="updatingDatabase" rounded="sm" variant="light" spinner-variant="primary">
-            <AlertCustomizeModal v-bind:formData="formData" v-bind:start="start" v-bind:end="end"
+            <AlertCustomizeForm v-bind:formData="formData" v-bind:start="start" v-bind:end="end"
                                  v-bind:indefinite="indefinite"/>
         </b-overlay>
         <div slot="modal-footer">
@@ -21,7 +21,7 @@
 
 <script>
     import {db} from "../firebase";
-    import AlertCustomizeModal from "./AlertCustomizeModal";
+    import AlertCustomizeForm from "./AlertCustomizeForm";
     import firebase from 'firebase/app'
     const { serverTimestamp } = firebase.firestore.FieldValue;
 
@@ -33,7 +33,7 @@
     export default {
         name: "CustomModal",
         components: {
-            AlertCustomizeModal
+          AlertCustomizeForm
         },
         props: {
             alertDoc: Object,

@@ -1,5 +1,5 @@
 <template>
-    <b-modal id="bv-modal-delete" v-model="showModal">
+    <b-modal id="bv-modal-delete" v-model="showModal.visible">
         <div slot="modal-header" class="m-modal-header">
             <div>
                 <h5 class="modal-title">Delete Alert</h5>

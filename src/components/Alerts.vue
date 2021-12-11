@@ -111,9 +111,9 @@
                 alertsActive: [],
                 alertsInactive: [],
                 // alertsExpired: [],
-                showEditModal: false,
-                showDeleteModal: false,
-                showCreateModal: false,
+                showEditModal: {visible: false},
+                showDeleteModal: {visible: false},
+                showCreateModal: {visible: false},
                 clickedAlert: {},
                 loading: true,
                 drag: false,
@@ -132,25 +132,25 @@
         methods: {
             openEditModal(alertDoc) {
                 this.clickedAlert = alertDoc;
-                this.showEditModal = true;
+                this.showEditModal.visible = true;
             },
             hideEditModal() {
-                this.showEditModal = false;
+                this.showEditModal.visible = false;
                 this.clickedAlert = {};
             },
             openDeleteModal(alertDoc) {
                 this.clickedAlert = alertDoc;
-                this.showDeleteModal = true;
+                this.showDeleteModal.visible = true;
             },
             hideDeleteModal() {
-                this.showDeleteModal = false;
+                this.showDeleteModal.visible = false;
                 this.clickedAlert = {};
             },
             openCreateModal() {
-                this.showCreateModal = true;
+                this.showCreateModal.visible = true;
             },
             hideCreateModal() {
-                this.showCreateModal = false;
+                this.showCreateModal.visible = false;
             },
             alertEnd(end) {
                 if(end === "") {

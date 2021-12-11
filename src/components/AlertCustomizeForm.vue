@@ -78,7 +78,7 @@
     import ChangeDate from "./ChangeDate";
 
     export default {
-        name: "AlertModal",
+        name: "AlertCustomizeForm",
         components: {
             ChangeDate
         },

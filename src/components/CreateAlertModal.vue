@@ -1,11 +1,11 @@
 <template>
-    <b-modal id="bv-modal-create" v-model="showModal" ref="createModal" @hide="handleHideEvent">
+    <b-modal id="bv-modal-create" v-model="showModal.visible" ref="createModal" @hide="handleHideEvent">
         <div slot="modal-header" class="m-modal-header">
             <h5 class="modal-title">Create New Alert</h5>
             <button type="button" aria-label="Close" class="close" @click="hideModal(); reset();">×</button>
         </div>
         <b-overlay :show="updatingDatabase" rounded="sm" variant="light" spinner-variant="primary">
-            <AlertCustomizeModal v-bind:formData="formData" v-bind:start="start" v-bind:end="end"
+            <AlertCustomizeForm v-bind:formData="formData" v-bind:start="start" v-bind:end="end"
                                  v-bind:indefinite="indefinite"/>
         </b-overlay>
         <div slot="modal-footer">
@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import AlertCustomizeModal from "./AlertCustomizeModal";
+    import AlertCustomizeForm from "./AlertCustomizeForm";
     import {db} from "../firebase";
     import firebase from 'firebase/app'
     const { serverTimestamp } = firebase.firestore.FieldValue;
@@ -57,7 +57,7 @@
     export default {
         name: "CreateModal",
         components: {
-            AlertCustomizeModal
+          AlertCustomizeForm
         },
         props: {
             showModal: Boolean,

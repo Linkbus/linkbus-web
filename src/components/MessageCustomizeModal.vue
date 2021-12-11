@@ -1,5 +1,5 @@
 <template>
-    <b-modal id="bv-modal-message" v-model="showModal">
+    <b-modal id="bv-modal-message" v-model="showModal.visible">
         <div slot="modal-header" class="m-modal-header">
             <div>
                 <h5 class="modal-title">Customize School Alert</h5>
@@ -63,7 +63,7 @@
         },
         props: {
             message: Object,
-            showModal: Boolean,
+            showModal: Object,
             hideModal: Function,
             updateSuccessAlert: Function,
             showAction: Boolean
