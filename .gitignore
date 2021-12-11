@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
-/dist
-
+dist
 
 # local env files
 .env.local
@@ -13,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+
 # Editor directories and files
 .idea
 .vscode
@@ -21,3 +21,7 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Firebase
+firestore-debug.log
+.firebase
