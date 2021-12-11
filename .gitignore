@@ -2,9 +2,11 @@
 node_modules
 dist
 
+
 # local env files
 .env.local
 .env.*.local
+
 
 # Log files
 npm-debug.log*
@@ -22,6 +24,11 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
+
 # Firebase
 firestore-debug.log
 .firebase
+
+
+# Node
+package-lock.json
